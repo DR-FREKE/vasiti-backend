@@ -1,0 +1,35 @@
+{
+  "name": "Vasiti",
+  "version": "1.0.0",
+  "description": "",
+  "main": "app.js",
+  "scripts": {
+    "test": "jest",
+    "clean": "rm -rf build && mkdir build",
+    "build-server": "babel -d ./build ./server -s",
+    "build": "npm run clean && npm run build-css && npm run build-server",
+    "start": "node ./build/app.js",
+    "debug": "node --debug ./build/app.js",
+    "start-dev": "node ./app.js --exec babel-node - js",
+    "server": "nodemon ./app.js --exec babel-node - js"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "axios": "^0.21.1",
+    "babel-polyfill": "^6.26.0",
+    "cors": "^2.8.5",
+    "dotenv": "^8.2.0",
+    "express": "^4.17.1",
+    "jest": "^27.0.5",
+    "joi": "^17.4.0",
+    "mysql2": "^2.2.5",
+    "sequelize": "^6.6.2"
+  },
+  "devDependencies": {
+    "babel-cli": "^6.26.0",
+    "babel-preset-env": "^1.7.0",
+    "babel-preset-stage-0": "^6.24.1"
+  }
+}
