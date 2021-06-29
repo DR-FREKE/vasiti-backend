@@ -35,6 +35,13 @@ export const validateUpdateProduct = (data) => {
       "string.required": "product_description is required",
       "string.base": "product_description must be a string",
     }),
+    product_varieties: Joi.array().items({
+      size: Joi.string().required(),
+      color: Joi.string().required(),
+      quantity: Joi.string().required(),
+      images: Joi.array().required(),
+      price: Joi.string().required(),
+    }),
     show: Joi.boolean().required(),
   });
 
